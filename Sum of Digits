@@ -1,0 +1,8 @@
+Sum of digits
+
+a = int(input("entry number"))
+dummy = 0
+while (a > 0):
+    dummy += a % 10
+    a //= 10
+print(dummy)
