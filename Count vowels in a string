@@ -1,0 +1,9 @@
+Count vowels in a string
+
+a = (input("entry number"))
+count = 0
+for char in a :
+    if char in[ "a","e","i","o","u"]:
+        count += 1
+
+print(count)
