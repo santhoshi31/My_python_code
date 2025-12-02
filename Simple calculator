@@ -1,0 +1,20 @@
+Simple calculator
+
+q = int(input("entry number"))
+w = int(input("entry number"))
+op = (input("entry oprator"))
+
+if op == "+":
+    result = q+w
+elif op == "-":
+    result = q-w
+elif op == "/":
+    result = q/w
+elif op == "//":
+    result = q//w
+elif op == "*":
+    result = q*w
+else:
+    print("opration not found")
+
+print(result)
