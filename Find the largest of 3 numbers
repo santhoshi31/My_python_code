@@ -1,0 +1,15 @@
+Find the largest of 3 numbers
+
+q = int(input("entry number"))
+w = int(input("entry number"))
+e = int(input("entry number"))
+
+if q > w:
+    if q > e:
+        print(f"{q} Q is greater")
+    else:
+        print(f"{e} E is greater")
+elif w > e:
+    print(f"{w} W is greater")
+else:
+    print(f"{e} E is greater")
