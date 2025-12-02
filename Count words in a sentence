@@ -1,0 +1,6 @@
+Count words in a sentence
+
+a = (input("entry input"))
+word = a.split()
+count = len(word)
+print(count)
