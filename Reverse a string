@@ -1,0 +1,5 @@
+Reverse a string
+
+op = (input("entry oprator"))
+result = op[::-1]
+print(result)
