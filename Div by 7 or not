@@ -1,0 +1,6 @@
+check the given is div by 7 or 11?
+num = int(input("Enter a number: "))
+if num % 7 == 0 or num % 11 == 0:
+    print("Divisible by 7 or 11")
+else:
+    print("Not divisible by 7 or 11")
