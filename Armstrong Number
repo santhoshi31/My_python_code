@@ -1,0 +1,8 @@
+function for armstrong number
+
+def is_armstrong(num):
+    total = 0
+    digits = str(num)
+    for d in digits:
+        total += int(d) ** len(digits)
+    return total == num
