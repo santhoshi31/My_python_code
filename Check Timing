@@ -1,0 +1,6 @@
+check the time is morning or evening -- if it is mor or eve --good time to walk or stay indoor
+ans- time = int(input("Enter time in 24-hour format (0–23): "))
+if 5 <= time <= 11 or 17 <= time <= 20:
+    print("Good time to walk")
+else:
+    print("Stay indoor")
