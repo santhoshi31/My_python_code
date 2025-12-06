@@ -1,0 +1,7 @@
+function to find bonus---base s=10000, bonus=5000or6000or...
+
+def calculate_bonus(salary):
+    if salary > 10000:
+        return 6000
+    else:
+        return 5000
