@@ -1,0 +1,18 @@
+import pandas as pd
+
+df = pd.read_csv('iris.csv')
+
+# 1. Print 15th row
+row_15 = df.iloc[15]
+print(row_15)
+
+# 2. Print rows 20 to 30
+rows_20_30 = df.iloc[20:31]
+print(rows_20_30)
+
+# 3. Print only 'species' column for row 25
+species_25 = df.iloc[25]['species']   # or ['Species'] based on dataset
+print(species_25)
+
+# 4. Number of rows in dataset
+print(df.shape[0])
