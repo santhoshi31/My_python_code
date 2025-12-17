@@ -1,0 +1,16 @@
+import pandas as pd
+
+# 1. Load both CSV files
+emp = pd.read_csv("employees.csv")
+dept = pd.read_csv("departments.csv")
+
+# 5. Convert employee names to uppercase
+merged["name"] = merged["name"].apply(lambda x: x.upper())
+
+# 6. Total salary paid per department
+total_salary = merged.groupby("department_name")["salary"].sum()
+print(total_salary)
+
+# 7. Sort employees by salary descending
+sorted_employees = merged.sort_values(by="salary", ascending=False)
+print(sorted_employees)
