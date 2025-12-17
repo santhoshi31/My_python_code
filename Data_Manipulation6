@@ -1,0 +1,19 @@
+import pandas as pd
+
+# 1. Load CSV
+df = pd.read_csv("students.csv")
+
+# 4. Convert all names to Proper Case
+df["name"] = df["name"].apply(lambda x: x.title())
+
+# 5. Highest marks in each subject
+highest_marks = df.groupby("subject")["marks"].max()
+print(highest_marks)
+
+# 6. Sort dataset by marks (descending)
+sorted_df = df.sort_values(by="marks", ascending=False)
+print(sorted_df)
+
+# 7. Count how many students passed in each subject
+pass_count = df[df["result"] == "PASS"].groupby("subject")["id"].count()
+print(pass_count)
