@@ -1,0 +1,14 @@
+import pandas as pd
+
+# 1. Load both CSV files
+emp = pd.read_csv("employees.csv")
+dept = pd.read_csv("departments.csv")
+
+# 2. Remove rows where salary is missing
+emp = emp.dropna(subset=["salary"])
+
+# 3. Create annual_salary column
+emp["annual_salary"] = emp["salary"] * 12
+
+# 4. Merge employees with departments using dept_id
+merged = pd.merge(emp, dept, on="dept_id", how="inner")
