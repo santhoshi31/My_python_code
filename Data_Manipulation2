@@ -1,0 +1,22 @@
+import pandas as pd
+
+df = pd.read_csv("iris.csv")
+
+# 1. Print only the selected columns
+print(df[['sepal_length', 'sepal_width', 'species']])
+
+# 2. Filter rows where species is Iris-setosa
+setosa_rows = df[df['species'] == 'Iris-setosa']
+print(setosa_rows)
+
+# 3. Add new column petal_area = petal_length * petal_width
+df['petal_area'] = df['petal_length'] * df['petal_width']
+print(df.head())   # optional, just to view
+
+# 4. Average petal_area for each species
+avg_area = df.groupby('species')['petal_area'].mean()
+print(avg_area)
+
+# 5. Sort entire dataset by petal_area descending
+sorted_df = df.sort_values(by='petal_area', ascending=False)
+print(sorted_df)
