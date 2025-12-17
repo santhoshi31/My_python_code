@@ -1,0 +1,11 @@
+import pandas as pd
+
+# 1. Load CSV
+df = pd.read_csv("students.csv")
+
+# 2. Replace missing marks with average marks of that subject
+df["marks"] = df["marks"].fillna(df.groupby("subject")["marks"].transform("mean"))
+
+# 3. Add new column 'result' (PASS / FAIL)
+df["result"] = df["marks"].apply(lambda x: "PASS" if x >= 50 else "FAIL")
+
