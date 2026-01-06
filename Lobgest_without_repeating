@@ -1,0 +1,43 @@
+# Function to find the longest substring without repeating characters
+# and return both the substring and its length
+def longest_unique_substring(s):
+    
+    # Dictionary to store last seen index of each character
+    char_index = {}
+    
+    # Left pointer of the sliding window
+    left = 0
+    
+    # Variables to track maximum length and substring start
+    max_length = 0
+    start = 0
+    
+    # Iterate through the string using index and character
+    for right, char in enumerate(s):
+        
+        # If character is already seen and inside the current window,
+        # move the left pointer to avoid repetition
+        if char in char_index and char_index[char] >= left:
+            left = char_index[char] + 1
+        
+        # Update last seen index of the character
+        char_index[char] = right
+        
+        # Update maximum length and starting position if longer substring found
+        if right - left + 1 > max_length:
+            max_length = right - left + 1
+            start = left
+    
+    # Extract the longest non-repeating substring
+    longest_substring = s[start:start + max_length]
+    
+    return longest_substring, max_length
+
+
+# Input strings
+s1 = "abcabcbb"
+s2 = "pwwkew"
+
+# Print results
+print(longest_unique_substring(s1))  # ('abc', 3)
+print(longest_unique_substring(s2))  # ('wke', 3)
